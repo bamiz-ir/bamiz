@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\traits\PageStaticValues;
 use App\Http\Controllers\traits\ReserveTrait;
 use App\Http\Requests\PaymentRequest;
 use App\Models\Center;
@@ -15,6 +16,7 @@ use SoapClient;
 class PaymentController extends Controller
 {
     use ReserveTrait;
+    use PageStaticValues;
 
     protected $merchant_id = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX';
     protected $totalPrice;
@@ -52,7 +54,6 @@ class PaymentController extends Controller
             "date" => $data['reserve_data']['date'],
             "time" => $data['reserve_data']['time'],
             "guest_count" => $data['reserve_data']['guest_count'],
-            "price" => $data['price'],
             "user_id" => auth()->user()->id,
             "center_id" => $center->id,
             "status" => false,
@@ -75,15 +76,18 @@ class PaymentController extends Controller
         }
 
         $this->totalPrice += $data['price'] * $reserve->guest_count;
+        $reserve->update(['price' => $this->totalPrice]);
 
         ////////////////////////////////////////////////////////////
         /// در گاه پرداخت
 
+        $this->getSettingsData();
+
         $MerchantID = $this->merchant_id; //Required
         $Amount = $this->totalPrice; //Amount will be based on Toman - Required
-        $Description = 'توضیحات تراکنش تستی'; // Required
-        $Email = 'UserEmail@Mail.Com'; // Optional
-        $Mobile = '09123456789'; // Optional
+        $Description = 'رزرو رستوران از سایت بامیز'; // Required
+        $Email = $this->settings['email']; // Optional
+        $Mobile = $this->settings['phone']; // Optional
         $CallbackURL = 'http://127.0.0.1:8000/payment/callback'; // Required
 
 

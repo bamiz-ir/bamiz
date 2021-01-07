@@ -207,6 +207,8 @@ return [
         "short text" => 'متن کوتاه',
         "wish_listable_id" => 'مدل علاقه مندی',
         "wish_listable_type" => 'نوع علاقه مندی',
-        "product_id.0" => 'غذا ها'
+        "product_id.0" => 'غذا ها',
+        "star" => 'امتیاز',
+        "body" => 'متن'
     ],
 ];

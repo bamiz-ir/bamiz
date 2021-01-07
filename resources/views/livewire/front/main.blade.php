@@ -164,8 +164,6 @@
         <p class="btn_home_align" style="text-align: left !important;"><a href="centers" class="btn_1 rounded">نمایش
                 همه</a></p>
         <hr class="large">
-
-
     </section>
 </div>
 <div class="container container-custom margin_30_95">

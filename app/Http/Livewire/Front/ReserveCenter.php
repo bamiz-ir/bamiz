@@ -17,7 +17,6 @@ class ReserveCenter extends Component
     public $options = [];
 
     public $price;
-
     public $options_price = 0;
 
     public function SetNewOption($slug)

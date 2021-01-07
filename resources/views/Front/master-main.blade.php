@@ -89,6 +89,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css" id="theme-styles">
+
     @stack('CSS')
 
     @livewireStyles
@@ -108,8 +111,15 @@
             </a>
         </div>
         <ul id="top_menu">
-            <li><a href="/front/cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
-            <li><a href="/front/#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+
+            @if(auth()->check())
+                <li><a href="{{ route('logout') }}"  class="login" title="خروج">خروج</a></li>
+            @else
+                <li><span> <a href="/login">ورود</a> </span></li>
+                /
+                <li><span> <a href="/register">عضویت</a> </span></li>
+            @endif
+
             <li><a href="/front/wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
         </ul>
         <!-- /top_menu -->
@@ -123,50 +133,31 @@
         <nav id="menu" class="main-menu">
             <ul>
 
+                @php $categories = \App\Models\Category::query()->where('is_remove' , 0)->get() @endphp
+
                 <li><span><a href="/">صفحه نخست</a></span></li>
-                <li><span><a href="mizbans">میزبان</a></span>
+                <li><span><a>میزبان</a></span>
+                    <ul>
+                       @foreach($categories as $c)
+                            <li>
+                                <a href="/mizbans/{{ $c->slug }}">{{ $c->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li><span><a href="/map">نقشه میزبان</a></span></li>
+                <li><span><a>رزرو سریع</a></span>
                     <ul>
                         <li>
-                            <a href="mizbans/caffe">کافه</a>
+                            <a href="/centers">رزرو میز</a>
                         </li>
                         <li>
-                            <a href="mizbans/restaurant">رستوران</a>
-                        </li>
-                        <li>
-                            <a href="mizbans/fastfood">فست فود</a>
-                        </li>
-                        <li>
-                            <a href="mizbans/teashop">سفره خانه</a>
+                            <a href="/foods">رزرو غذا</a>
                         </li>
                     </ul>
                 </li>
-                <li><span><a href="map">نقشه میزبان</a></span></li>
-                <li><span><a href="centers">رزرو سریع</a></span>
-                    <ul>
-                        <li>
-                            <a href="centers">رزرو میز</a>
-                        </li>
-                        <li>
-                            <a href="foods">رزرو غذا</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><span><a href="cooperation">درخواست همکاری</a></span></li>
-                <li><span><a href="about">درباره بامیز </a></span></li>
-
-                @if(auth()->check())
-                    <form method="post" action="{{ route('logout') }}">
-                        @csrf
-
-                        <input type="submit" value="خروج">
-
-                    </form>
-                @else
-                    <li><span> <a href="/login">ورود</a> </span></li>
-                    /
-                    <li><span> <a href="/register">عضویت</a> </span></li>
-                @endif
-
+                <li><span><a href="/cooperation">درخواست همکاری</a></span></li>
+                <li><span><a href="/about">درباره بامیز </a></span></li>
             </ul>
         </nav>
     </header>

@@ -38,17 +38,21 @@
                                     <h4>{{ $center->name }}</h4>
                                     <p> {{ \Illuminate\Support\Str::limit($center->description , 150) }} </p>
                                     <ul class="hotel_facilities">
-                                        <li><img src="/front/img/hotel_facilites_icon_2.svg" alt="">متوسط : کلاس قیمت</li>
+                                        <li><img src="/front/img/hotel_facilites_icon_2.svg" alt="">متوسط : کلاس قیمت
+                                        </li>
                                         <li><img src="/front/img/hotel_facilites_icon_2.svg" alt="">ظرفیت : 50 نفر</li>
-                                        <li><img src="/front/img/hotel_facilites_icon_8.svg" alt="">مالیات بر ارزش افزوده 10
+                                        <li><img src="/front/img/hotel_facilites_icon_8.svg" alt="">مالیات بر ارزش
+                                            افزوده 10
                                             درصد
                                         </li>
                                         <li><img src="/front/img/hotel_facilites_icon_4.svg" alt="">اینترنت - دارد</li>
-                                        <li><img src="/front/img/hotel_facilites_icon_5.svg" alt=""> فضای بازی کودکان- میز
+                                        <li><img src="/front/img/hotel_facilites_icon_5.svg" alt=""> فضای بازی کودکان-
+                                            میز
                                             مخصوص
                                         </li>
                                         <li><img src="/front/img/hotel_facilites_icon_5.svg" alt="">فضای VIP - 1</li>
-                                        <li><img src="/front/img/hotel_facilites_icon_5.svg" alt="">موسیقی زنده - آخر هفته
+                                        <li><img src="/front/img/hotel_facilites_icon_5.svg" alt="">موسیقی زنده - آخر
+                                            هفته
                                             ها
                                         </li>
 
@@ -108,28 +112,36 @@
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -231px; top: -101px; width: 256px; height: 256px;"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -487px; top: -101px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://a.tile.openstreetmap.org/14/10465/6416.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://a.tile.openstreetmap.org/14/10465/6416.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -487px; top: 155px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://a.tile.openstreetmap.org/14/10465/6417.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://a.tile.openstreetmap.org/14/10465/6417.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -487px; top: -357px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://c.tile.openstreetmap.org/14/10465/6415.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://c.tile.openstreetmap.org/14/10465/6415.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -231px; top: -357px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://a.tile.openstreetmap.org/14/10466/6415.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://a.tile.openstreetmap.org/14/10466/6415.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: 25px; top: -357px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://c.tile.openstreetmap.org/14/10467/6415.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://c.tile.openstreetmap.org/14/10467/6415.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -743px; top: -357px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://b.tile.openstreetmap.org/14/10464/6415.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://b.tile.openstreetmap.org/14/10464/6415.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -743px; top: -101px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://a.tile.openstreetmap.org/14/10464/6416.png"><img
+                                            crossorigin="anonymous"
+                                            src="http://a.tile.openstreetmap.org/14/10464/6416.png"><img
                                             class="olTileImage"
                                             style="visibility: inherit; opacity: 1; position: absolute; left: -743px; top: 155px; width: 256px; height: 256px;"
-                                            crossorigin="anonymous" src="http://c.tile.openstreetmap.org/14/10464/6417.png">
+                                            crossorigin="anonymous"
+                                            src="http://c.tile.openstreetmap.org/14/10464/6417.png">
                                     </div>
                                     <div id="OpenLayers_Layer_Markers_81" dir="ltr" class="olLayerDiv"
                                          style="position: absolute; width: 100%; height: 100%; z-index: 330;">
@@ -140,7 +152,8 @@
                                                  style="position: relative; width: 32px; height: 32px;"></div>
                                     </div>
                                 </div>
-                                <div id="OpenLayers_Control_Attribution_2" class="olControlAttribution olControlNoSelect"
+                                <div id="OpenLayers_Control_Attribution_2"
+                                     class="olControlAttribution olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1002;">© <a
                                         href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors
                                 </div>
@@ -182,15 +195,20 @@
                                              src="js/map/img/zoom-minus-mini.png"
                                              style="position: relative; width: 18px; height: 18px;"></div>
                                 </div>
-                                <div id="OpenLayers_Control_DrawFeature_38" class="olControlDrawFeature olControlNoSelect"
+                                <div id="OpenLayers_Control_DrawFeature_38"
+                                     class="olControlDrawFeature olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1004;"></div>
-                                <div id="OpenLayers_Control_DrawFeature_44" class="olControlDrawFeature olControlNoSelect"
+                                <div id="OpenLayers_Control_DrawFeature_44"
+                                     class="olControlDrawFeature olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1005;"></div>
-                                <div id="OpenLayers_Control_DrawFeature_50" class="olControlDrawFeature olControlNoSelect"
+                                <div id="OpenLayers_Control_DrawFeature_50"
+                                     class="olControlDrawFeature olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1006;"></div>
-                                <div id="OpenLayers_Control_DragFeature_56" class="olControlDragFeature olControlNoSelect"
+                                <div id="OpenLayers_Control_DragFeature_56"
+                                     class="olControlDragFeature olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1007;"></div>
-                                <div id="OpenLayers_Control_DrawFeature_59" class="olControlDrawFeature olControlNoSelect"
+                                <div id="OpenLayers_Control_DrawFeature_59"
+                                     class="olControlDrawFeature olControlNoSelect"
                                      unselectable="on" style="position: absolute; z-index: 1008;"></div>
                                 <div id="OpenLayers_Control_65" class="olControl olControlNoSelect" unselectable="on"
                                      style="position: absolute; z-index: 1009;"></div>
@@ -272,18 +290,22 @@
                         @if(!$comments->isEmpty())
                             @foreach($comments as $c)
                                 <div class="reviews-container">
-
                                     <div class="review-box clearfix">
-                                        <figure class="rev-thumb"><img src="{{ storage_path($c->user->profile_photo_path) }}" alt="">
+                                        <figure class="rev-thumb"><img
+                                                src="{{ $c->user->profile_photo_path ? \Illuminate\Support\Facades\Storage::url($c->user->profile_photo_path) :  "https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg"}}"
+                                                alt="">
                                         </figure>
+
                                         <div class="rev-content">
+                                            <h5> {{ $c->title }} </h5>
                                             <div class="rating">
                                                 <i class="icon_star voted"></i><i class="icon_star voted"></i><i
                                                     class="icon_star voted"></i><i class="icon_star voted"></i><i
                                                     class="icon_star"></i>
                                             </div>
                                             <div class="rev-info">
-                                                {{ \Illuminate\Support\Carbon::parse($c->created_at)->diffForHumans() }} - {{ $c->user->username }}
+                                                {{ \Illuminate\Support\Carbon::parse($c->created_at)->diffForHumans() }}
+                                                - {{ $c->user->username }}
                                             </div>
                                             <div class="rev-text">
                                                 <p>
@@ -306,40 +328,63 @@
                     <hr>
 
                     <div class="add-review">
+                        @if($errors->any() && ($errors->has('body') || $errors->has('title') || $errors->has('star')))
+
+                            <div class="alert alert-danger text-center">
+
+                                @foreach($errors->all() as $e)
+                                    {{ $e }}<br>
+                                @endforeach
+
+                            </div>
+
+                        @endif
+
                         <h5>ثبت نظر</h5>
-                        <form>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label>نام و نام خانوادگی *</label>
-                                    <input type="text" name="name_review" id="name_review" placeholder=""
-                                           class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>ایمیل *</label>
-                                    <input type="email" name="email_review" id="email_review" class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>امتیاز </label>
-                                    <div class="custom-select-form">
-                                        <select name="rating_review" id="rating_review" class="wide" style="display: none;">
+                        @if(auth()->check())
+                            <form wire:submit.prevent="SubmitNewComment()">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>عنوان *</label>
+                                        <input wire:model.defer="title" required type="text" name="name_review"
+                                               id="name_review" placeholder=""
+                                               class="form-control">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label>امتیاز (اختیاری)</label>
+                                        <select class="form-control" wire:model.defer="star" name="rating_review"
+                                                id="rating_review">
+                                            <option value="" selected>امتیاز نمیدم</option>
                                             <option value="1">1 (ضعیف)</option>
                                             <option value="2">2</option>
-                                            <option value="3" selected="">3 (متوسظ)</option>
+                                            <option value="3">3 (متوسط)</option>
                                             <option value="4">4</option>
                                             <option value="5">5 (عالی</option>
                                         </select>
                                     </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label>نظر شما *</label>
+                                        <textarea wire:model.defer="body" required name="body" id="review_text"
+                                                  class="form-control"
+                                                  style="height:130px;"></textarea>
+                                    </div>
+
+                                    @if(session()->has('comment_add'))
+                                        <div class="mt-3 text-center text-success" style="font-size: 14px !important;">{{ session()->get('comment_add') }}</div>
+                                    @endif
+
+                                    <div class="form-group col-md-12 add_top_20">
+                                        <input type="submit" value="ثبت نظر" class="btn_1" id="submit-review">
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <label>نظر شما *</label>
-                                    <textarea name="body" id="review_text" class="form-control"
-                                              style="height:130px;"></textarea>
-                                </div>
-                                <div class="form-group col-md-12 add_top_20">
-                                    <input type="submit" value="ثبت نظر" class="btn_1" id="submit-review">
-                                </div>
+                            </form>
+                        @else
+                            <div style="margin-top: 25px !important;" class="alert alert-danger">برای ثبت نظر ابتدا
+                                <a class="text-info" href="/login"> وارد </a> شوید
                             </div>
-                        </form>
+                        @endif
                     </div>
                 </div>
                 <!-- /col -->
@@ -349,6 +394,19 @@
 
                     <div class="theiaStickySidebar"
                          style="padding-top: 0px; padding-bottom: 1px; position: fixed; transform: translateY(-51.4px); top: 0px; left: 204.6px; width: 350px;">
+
+                        @if($errors->any() && !($errors->has('body') || $errors->has('title') || $errors->has('star')))
+
+                            <div class="alert alert-danger text-center">
+
+                                @foreach($errors->all() as $e)
+                                    {{ $e }}<br>
+                                @endforeach
+
+                            </div>
+
+                        @endif
+
                         <form action="{{ route('reserve' , $center->slug) }}" method="post" id="reserve_form">
 
                             @csrf
@@ -358,12 +416,14 @@
                                     <span> {{ $price }} <small> تومان هزینه رزرو هر نفر</small></span>
                                     <div class="score"><strong>{{ $center->reserves->count() }} رزرو موفق</strong></div>
                                     <br>
-                                    <div class="text-center" style="margin-top: 10px;color: red"><strong>هزینه رزرو از مبلغ
+                                    <div class="text-center" style="margin-top: 10px;color: red"><strong>هزینه رزرو از
+                                            مبلغ
                                             فاکتور سفارش کسر می شود</strong></div>
                                 </div>
 
                                 <div class="form-group">
-                                    <input wire:model="date" required class="form-control" type="date" name="date" id="date"
+                                    <input wire:model="date" required class="form-control" type="date" name="date"
+                                           id="date"
                                            placeholder="تاریخ رزرو">
                                 </div>
 
@@ -378,40 +438,61 @@
                                     </select>
 
                                     <br>
-                                <div class="form-group clearfix">
-                                    <select wire:model="chair_id" class="form-control" name="chair_id">
-                                                <option value="">میز خاصی مد نظر ندارم</option>
+                                    <div class="form-group clearfix">
+                                        <select wire:model="chair_id" class="form-control" name="chair_id">
+                                            <option value="">میز خاصی مد نظر ندارم</option>
 
                                             @foreach($chairs as $c)
                                                 <option value="{{ $c['id'] }}"> میز شماره {{ $c['number'] }} </option>
                                             @endforeach
 
                                         </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <small style="color: red">تعداد صندلی های هر میز
+                                            : {{ $center->chairs_people_count }}</small>
+                                        <input wire:model="guest_count" required class="form-control" type="text"
+                                               name="guest_count" id="quest_count"
+                                               placeholder="تعداد مهمانان">
+                                    </div>
+
+
+                                    <div class="text-center text-red"><b>سفارش تشریفات میز و رزرو غذا در صورت تمایل در
+                                            مرحله بعد
+                                            انجام می شود</b></div>
+
+
+                                    <button id="btn_check_reserve" type="submit" class="btn_1 full-width outline"><i
+                                            class="icon-calendar-outlilne"></i> تکمیل رزرو
+                                    </button>
+                                    @if(auth()->check())
+                                        @if(!$is_Added_To_WishList)
+                                            <button wire:click.prevent="AddToWishList()"
+                                                    class="btn_1 full-width outline wishlist"><i
+                                                    class="icon_heart"></i> اضافه به علاقه مندی ها
+                                            </button>
+
+                                        @else
+                                            <button wire:click.prevent="DeleteFromWishList()"
+                                                    class="btn_1 full-width outline wishlist"><i
+                                                    class="icon_heart"></i> حذف از علاقه مندی ها
+                                            </button>
+                                        @endif
+
+
+                                        @if(session()->has('wishlist_status'))
+                                                <div class="mt-3 text-center text-success" style="font-size: 14px !important;">{{ session()->get('wishlist_status') }}</div>
+                                            @endif
+
+                                    @else
+                                        <hr>
+                                        <span class="alert alert-danger">برای افزدون به علاقه مندی ها ابتدا <a
+                                                class="text-info"
+                                                href="/login"> وارد </a> شوید</span>
+                                    @endif
+
                                 </div>
-
-                                <div class="form-group">
-                                    <small style="color: red">تعداد صندلی های هر میز
-                                        : {{ $center->chairs_people_count }}</small>
-                                    <input wire:model="guest_count" required class="form-control" type="text" name="guest_count" id="quest_count"
-                                           placeholder="تعداد مهمانان">
-                                </div>
-
-
-                                <div class="text-center text-red"><b>سفارش تشریفات میز و رزرو غذا در صورت تمایل در مرحله بعد
-                                        انجام می شود</b></div>
-
-
-                                <button id="btn_check_reserve" type="submit" class="btn_1 full-width outline"><i
-                                        class="icon-calendar-outlilne"></i> تکمیل رزرو
-                                </button>
-                                <button id="btn_add_wash" class="btn_1 full-width outline wishlist"><i
-                                        class="icon_heart"></i> اضافه به علاقه مندی ها
-                                </button>
-
-                            </div>
-
-                            <button type="submit" id="btn_submit" style="display: none" value="تکمیل رزرو">تکمیل رزرو
-                            </button>
                         </form>
                         <div class="resize-sensor"
                              style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">

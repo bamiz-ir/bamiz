@@ -18,7 +18,7 @@ class CreateReservesTable extends Migration
             $table->string('date');
             $table->string('time');
             $table->integer('guest_count')->default(1);
-            $table->string('price');
+            $table->string('price')->default(0);
             $table->boolean('status')->default(false);
 
             $table->unsignedBigInteger('user_id');

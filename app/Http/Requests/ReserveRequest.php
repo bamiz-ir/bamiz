@@ -24,13 +24,9 @@ class ReserveRequest extends FormRequest
     public function rules()
     {
         return [
-            'center_id' => 'required|numeric|exists:centers,id',
-            'user_id' => 'required|numeric|exists:users,id',
             'date' => 'required|date|date_format:Y-m-d|after:yesterday',
-            'time' => 'required|max:5',
-            'price' => 'required|numeric',
+            'time' => 'required|max:5|numeric',
             'guest_count' => 'required|numeric',
-            'chair_id' => 'numeric',
             'product_id.*' => 'numeric|exists:products,id',
             'option_id.*' => 'numeric|exists:options,id'
         ];
