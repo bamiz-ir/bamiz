@@ -62,7 +62,7 @@ class Main extends Component
         // Get Top Five Centers of Bamiz
         $this->GetTopFiveCenters();
 
-        $this->getSettingsData();
+        $this->HeaderAndFooterStaticData();
     }
 
     public function render()

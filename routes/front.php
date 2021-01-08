@@ -14,3 +14,7 @@ Route::get('/centers/{slug}' , [MainController::class , 'center_detail']);
 Route::post('/reserve/{slug}' , [ReserveController::class , 'reserve'])->name('reserve');
 Route::get('/reserve/{slug}' , [ReserveController::class , 'ShowReservePage'])->name('Show_Reserve');
 Route::get('/mizbans/{slug}' , [MainController::class , 'mizbans']);
+Route::get('/centers' , [MainController::class , 'centers']);
+Route::get('/galleries' , [MainController::class , 'galleries']);
+Route::get('/about_us' , [MainController::class , 'about_us']);
+Route::get('/contact_us' , [MainController::class , 'contact_us']);

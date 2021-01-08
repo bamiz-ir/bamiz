@@ -2,7 +2,7 @@
 
     use App\Models\Setting;
 
-        $settings['workwithus'] = Setting::query()->firstOrCreate(['key' => 'workwithus'] , [
+       $settings['workwithus'] = Setting::query()->firstOrCreate(['key' => 'workwithus'] , [
             'key' => 'workwithus',
             'value' => 'کافه یا رستوران هایی که تمایل دارند از امکان رزرو آنلاین میز با استفاده از تورمجازی بهره مند شوند بر روی دکمه زیر کلیک کنید تا از شرایط و مفاد همکاری مطلع شوید'
         ]);
@@ -17,19 +17,11 @@
             'value' => '1399'
         ]);
 
-        $settings['introduction'] = Setting::query()->firstOrCreate(['key' => 'introduction'] , [
-            'key' => 'introduction',
-            'value' => 'سامانه رزرو میز ، امکانی را در اختیار کاربران قرار می دهد که با استفاده از تورمجازی (تصاویر 360 درجه) در کافه ها و رستوران ها گشت و گذار داشته باشند تا هم با محیط کافه و رستوران ها آشنا شوند و هم بتوانند میز مورد نظر خود را با استفاده از تورمجازی انتخاب و برای تاریخی مشخص رزرو نمایند.'
-        ]);
-
-        $settings['year'] = Setting::query()->firstOrCreate(['key' => 'year'] , [
-            'key' => 'year',
-            'value' => '1399'
-        ]);
         $settings['email'] = Setting::query()->firstOrCreate(['key' => 'email'] , [
             'key' => 'email',
             'value' => 'bamiz.ir@gmail.com'
         ]);
+
         $settings['phone'] = Setting::query()->firstOrCreate(['key' => 'phone'] , [
             'key' => 'phone',
             'value' => '021-2000000'
@@ -54,7 +46,6 @@
             [
                 'value' => '/front/img/logo_sticky.svg'
             ]);
-
 @endphp
 
     <!DOCTYPE html>
@@ -157,7 +148,8 @@
                     </ul>
                 </li>
                 <li><span><a href="/cooperation">درخواست همکاری</a></span></li>
-                <li><span><a href="/about">درباره بامیز </a></span></li>
+                <li><span><a href="/about_us">درباره بامیز </a></span></li>
+                <li><span><a href="/contact_us">تماس با بامیز </a></span></li>
             </ul>
         </nav>
     </header>
@@ -187,11 +179,11 @@
                 <div class="col-lg-3 col-md-6 ml-lg-auto">
                     <h5>دسترسی سریع</h5>
                     <ul class="links">
-                        <li><a href="/about-us">درباره ما</a></li>
+                        <li><a href="/about_us">درباره ما</a></li>
                         <li><a href="/login">ورود</a></li>
                         <li><a href="/register">ثبت نام</a></li>
                         <li><a href="/blog">اخبار  و رویداد ها</a></li>
-                        <li><a href="/contact-us">تماس با ما</a></li>
+                        <li><a href="/contact_us">تماس با ما</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">

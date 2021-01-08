@@ -209,6 +209,7 @@ return [
         "wish_listable_type" => 'نوع علاقه مندی',
         "product_id.0" => 'غذا ها',
         "star" => 'امتیاز',
-        "body" => 'متن'
+        "body" => 'متن',
+        "chairs_people_count" => 'تعداد صندلی ها'
     ],
 ];

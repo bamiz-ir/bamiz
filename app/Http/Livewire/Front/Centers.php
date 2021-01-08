@@ -2,25 +2,22 @@
 
 namespace App\Http\Livewire\Front;
 
-use App\Models\Category;
 use App\Models\Center;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Mizbans extends Component
+class Centers extends Component
 {
     use WithPagination;
 
     protected $centers;
-    public $slug;
 
     public $pagination = 9;
     protected $paginationTheme = 'bootstrap';
 
-
     private function getCenterBySlug($slug)
     {
-        return Center::query()->where('slug', $slug)->first();
+        return Center::query()->where('slug' , $slug)->first();
     }
 
     public function AddToWishList($slug)
@@ -47,8 +44,8 @@ class Mizbans extends Component
 
     private function getData()
     {
-        $this->centers = Category::query()->where('slug', $this->slug)
-            ->first()->centers()->where('is_remove' , 0)->whereHas('work_time' , function ($query){
+        $this->centers = Center::query()->where('is_remove' , 0)
+            ->whereHas('work_time' , function ($query){
                 return $query->where('center_id' , '!=' , null);
             })->latest()->paginate($this->pagination);
     }
@@ -56,6 +53,6 @@ class Mizbans extends Component
     public function render()
     {
         $this->getData();
-        return view('livewire.front.mizbans', ['centers' => $this->centers]);
+        return view('livewire.front.centers' , ['centers' => $this->centers]);
     }
 }

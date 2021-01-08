@@ -26,16 +26,17 @@ use \App\Http\Controllers\FeedController;
 //            'password' => \Illuminate\Support\Facades\Hash::make('123'),
 //            'name' => 'ashkan',
 //            'email' => 'as@gmail.com',
-//            'phone' => '123'
+//            'phone' => '123',
+//            'email_verified_at' => \Carbon\Carbon::now()
 //        ]
 //    );
 //    auth()->loginUsingId(1);
 //
 //
-//    $centers = \App\Models\Center::with('reserves')->get();
-//    $topFiveCenters = $centers->sortByDesc(function($user){
-//        return $user->reserves->count();
-//    })->take(5);
+////    $centers = \App\Models\Center::with('reserves')->get();
+////    $topFiveCenters = $centers->sortByDesc(function($user){
+////        return $user->reserves->count();
+////    })->take(5);
 //
 //    return view('welcome');
 //});

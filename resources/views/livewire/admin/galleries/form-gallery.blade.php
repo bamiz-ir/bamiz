@@ -59,7 +59,6 @@
                             </div>
                         </div>
 
-
                     <div class="form-group">
                         <label class="control-label col-lg-2">عکس</label>
                         <div class="col-sm-10">
@@ -96,7 +95,6 @@
                             @endif
                         </div>
                     </div>
-
 
                     <div class="col-lg-12">
                         <div class="m-1-25 m-b-20">

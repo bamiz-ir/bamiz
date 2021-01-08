@@ -105,6 +105,7 @@
 
                                 <option @if($level == 'user') selected @endif value="user">کاربر</option>
                                 <option @if($level == 'admin') selected @endif value="admin">مدیر</option>
+                                <option @if($level == 'manager') selected @endif value="manager">مدیر رستوران</option>
 
                             </select>
 

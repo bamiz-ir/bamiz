@@ -35,6 +35,7 @@ use \App\Http\Controllers\Admin\RoleController;
 use \App\Http\Controllers\Admin\RoleUserController;
 use \App\Http\Controllers\Admin\CacheController;
 use \App\Http\Controllers\Admin\WishListController;
+use \App\Http\Controllers\Admin\CooperationController;
 
 
 Route::get('dashboard',[DashboardController::class , 'index'])->name('dashboard-one');
@@ -60,6 +61,7 @@ Route::resource('discounts' , DiscountController::class)->only(['index' , 'creat
 Route::resource('permissions' , PermissionController::class)->only(['index' , 'create' , 'edit']);
 Route::resource('roles' , RoleController::class)->only(['index' , 'create' , 'store' , 'edit' , 'update']);
 Route::resource('wish-lists' , WishListController::class)->only(['index' , 'create' , 'edit']);
+Route::resource('cooperations' , CooperationController::class)->only(['index' , 'create' , 'store' , 'edit' , 'update']);
 Route::resource('success_payments' , "\App\Http\Controllers\Admin\SuccessPaymentController" , ['parameters' => ['success_payments' => 'payment' ]])->only(['index']);
 Route::resource('failed_payments' , "\App\Http\Controllers\Admin\FailedPaymentController" , ['parameters' => ['failed_payments' => 'payment' ]])->only(['index']);
 Route::resource("reserves", "\App\Http\Controllers\Admin\ReserveController" , ['parameters' => ['reserves' => 'reserve' ]])->only(['index' , 'create' , 'store' , 'edit' , 'update']);

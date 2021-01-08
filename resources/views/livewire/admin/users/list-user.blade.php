@@ -77,9 +77,13 @@
 
                                 {{ "label label-success-border rounded" }}
 
-                                @else
+                                @elseif($item->level == 'user')
 
                                 {{ "label label-info-border rounded" }}
+
+                                    @else
+
+                                {{ "label label-danger-border rounded" }}
 
                                 @endif">
 
@@ -89,9 +93,13 @@
 
                                         مدیر
 
-                                    @else
+                                    @elseif($item->level == 'user')
 
                                         کابر
+
+                                    @else
+
+                                        مدیر رستوران
 
                                     @endif
 

@@ -21,4 +21,24 @@ class MainController extends Controller
     {
         return view('Front.center_detail');
     }
+
+    public function centers()
+    {
+        return view('Front.centers');
+    }
+
+    public function galleries()
+    {
+        return view('Front.galleries');
+    }
+
+    public function about_us()
+    {
+        return view('Front.about_us');
+    }
+
+    public function contact_us()
+    {
+        return view('Front.contact_us');
+    }
 }
