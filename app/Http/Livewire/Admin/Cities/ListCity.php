@@ -37,6 +37,14 @@ class ListCity extends Component
         $this->cities = $this->search != '' ? $this->Searching() : City::latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectCities();

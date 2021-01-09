@@ -39,6 +39,14 @@ class ListOptionReserve extends Component
         $this->option_reserved = $this->search != '' ? $this->Searching() : OptionReserve::latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectOptionReserves();

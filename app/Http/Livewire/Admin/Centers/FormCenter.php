@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Center;
 use App\Models\City;
 use App\Models\State;
+use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
@@ -17,6 +18,7 @@ class FormCenter extends Component
      public $center_id;
      public $state_id;
      public $city_id;
+     public $user_id;
      public $name;
      public $slug;
      public $images;
@@ -27,6 +29,7 @@ class FormCenter extends Component
      public $cats;
      public $states = [];
      public $cities = [];
+     public $users;
 
     private function GetCities()
     {
@@ -49,6 +52,7 @@ class FormCenter extends Component
         $this->slug = $this->center->slug;
         $this->images = $this->center->images;
         $this->description = $this->center->description;
+        $this->user_id = $this->center->user_id;
 
         $this->GetCities();
     }
@@ -60,6 +64,11 @@ class FormCenter extends Component
             ->get();
 
         $this->states = State::all();
+        $this->users = User::query()->where(function ($query){
+            return $query->where('block_status' , 0)
+                ->where('email_verified_at' , '!=' , null)
+                ->where('level' , 'manager');
+        })->get();
     }
 
     public function mount()

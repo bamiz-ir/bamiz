@@ -31,6 +31,14 @@ class ListRoleUser extends Component
         })->with('roles')->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(User $user)
     {
         foreach ($user->roles as $role) {

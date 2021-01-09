@@ -32,7 +32,7 @@ class CenterController extends Controller
     public function store(CenterRequest $request)
     {
         $images = $this->uploadImages($request->file('images') , 'centers');
-        auth()->user()->centers()->create(array_merge($request->all() , ['images' => $images]));
+        Center::create(array_merge($request->all() , ['images' => $images]));
 
         \Request::session()->flash('message', "مرکز ($request->name) با موفقیت افزوده شد. ");
         return redirect(route('centers.index'));

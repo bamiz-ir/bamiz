@@ -24,10 +24,10 @@ class ContactUsRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" =>  'required',
+            "title" =>  'required|max:50',
             "text" =>  'required|max:500',
-            "name" =>  'required',
-            "lastName" =>  'required',
+            "name" =>  'required|max:50',
+            "lastName" =>  'required|max:50',
             "email" =>  'required|email',
         ];
     }

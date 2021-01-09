@@ -30,6 +30,14 @@ class ListProductReserve extends Component
         })->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(ProductReserve $productReserve)
     {
         $productReserve->delete();

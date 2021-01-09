@@ -16,6 +16,14 @@ class ListUser extends Component
 
     protected $users;
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(User $user)
     {
         $user->update(['block_status' => true]);

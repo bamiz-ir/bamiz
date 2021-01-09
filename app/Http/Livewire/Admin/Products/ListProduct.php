@@ -16,6 +16,14 @@ class ListProduct extends Component
 
     protected $products = [];
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(Product $product)
     {
         $product->update(['is_remove' => true]);

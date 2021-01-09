@@ -44,6 +44,14 @@ class ListComment extends Component
             Comment::where('status', 1)->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectComments();

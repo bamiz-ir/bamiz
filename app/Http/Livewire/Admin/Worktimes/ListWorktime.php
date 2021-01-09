@@ -16,6 +16,14 @@ class ListWorktime extends Component
 
     protected $worktimes = [];
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(WorkTime $workTime)
     {
         $workTime->delete();

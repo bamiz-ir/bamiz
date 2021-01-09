@@ -16,6 +16,14 @@ class ListReserve extends Component
 
     protected $reserves = [];
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(Reserve $reserve)
     {
         $reserve->update(['status' => false]);

@@ -45,6 +45,14 @@ class ListNotapprovedComment extends Component
                 ->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(Comment $comment)
     {
         $comment->delete();

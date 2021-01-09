@@ -48,6 +48,14 @@ class ListCloseTicket extends Component
             : Ticket::where('status', 1)->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectTickets();

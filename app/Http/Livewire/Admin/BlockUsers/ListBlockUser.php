@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Admin\BlockUsers;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ListBlockUser extends Component
 {
+    use WithPagination;
+
     public $titlePage = '';
     public $pagination = 5;
     public $search = '';
@@ -22,6 +25,14 @@ class ListBlockUser extends Component
                 ->orWhere('email' , 'like' , '%' . $this->search . '%')
                 ->orWhere('phone' , 'like' , '%' . $this->search . '%');
         })->where('block_status' , 1)->latest()->paginate($this->pagination);
+    }
+
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
     }
 
     public function destroy(User $user)

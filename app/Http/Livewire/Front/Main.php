@@ -46,7 +46,7 @@ class Main extends Component
 //                    return $center->reserves->count();
 //                })->take(10);
 
-            $this->centers = Center::query()->where('is_remove' , 0)
+            $this->centers = Center::where('is_remove' , 0)
                 ->whereHas('work_time' , function ($q){
                     return $q->where('center_id' , '!=' , null);
                 })->limit(5)->get();
@@ -55,9 +55,9 @@ class Main extends Component
 
     private function selectData()
     {
-        $this->categories = Category::query()->where('chid', 0)->where('is_remove', 0)->get();
-        $this->latest_galleries = Gallery::query()->where('type' , 'image')->latest()->take(20)->get();
-        $this->latest_articles = Article::query()->where('status' , 1)->latest()->take(4)->get();
+        $this->categories = Category::where('chid', 0)->where('is_remove', 0)->get();
+        $this->latest_galleries = Gallery::where('type' , 'image')->latest()->take(20)->get();
+        $this->latest_articles = Article::where('status' , 1)->latest()->take(4)->get();
 
         // Get Top Five Centers of Bamiz
         $this->GetTopFiveCenters();

@@ -1,78 +1,90 @@
 <div>
-    <main>
-
-        <section class="hero_in restaurants start_bg_zoom">
-            <div class="wrapper">
-                <div class="container">
-                </div>
-            </div>
-        </section>
-        <!--/hero_in-->
-
-        <div class="filters_listing sticky_horizontal" style="">
+    <section class="hero_in restaurants start_bg_zoom">
+        <div class="wrapper">
             <div class="container">
-                <ul class="clearfix">
-                    <li>
-                        <div class="switch-field">
-                            <input type="radio" id="all" name="listing_filter" value="all" checked="">
-                            <label for="all">All</label>
-                            <input type="radio" id="popular" name="listing_filter" value="popular">
-                            <label for="popular">Popular</label>
-                            <input type="radio" id="latest" name="listing_filter" value="latest">
-                            <label for="latest">Latest</label>
-                        </div>
-                    </li>
-                </ul>
+                <h1 class="fadeInUp animated"><span></span>Paris Eat &amp; Drink list</h1>
             </div>
-            <!-- /container -->
         </div>
-        <!-- /filters -->
+    </section>
+    <!--/hero_in-->
 
-        <div class="collapse" id="collapseMap">
-            <div id="map" class="map"></div>
-        </div>
-        <!-- End Map -->
+    <div class="collapse" id="collapseMap">
+        <div id="map" class="map"></div>
+    </div>
+    <!-- End Map -->
 
-        <div class="container margin_60_35">
-            <div class="wrapper-grid">
-                <div class="row">
-                    @foreach($centers as $c)
-                        <div class="col-xl-4 col-lg-6 col-md-6">
-                            <div class="box_grid">
-                                <figure>
-
-                                    @if(auth()->check())
-                                        @if($c->wish_lists->where('user_id' , auth()->user()->id)->isEmpty())
-                                            <a wire:click="AddToWishList('{{ $c->slug }}')" class="wish_bt"></a>
-                                        @else
-                                            <a wire:click="DeleteFromWishList('{{ $c->slug }}')" class="wish_bt liked"></a>
-                                        @endif
-                                    @endif
-
-                                    <a href="/centers/{{ $c->slug }}"><img src="{{ $c->images['images']['original'] }}" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>مشاهده</span></div></a>
-                                    <small>{{ $c->state->name }}</small>
-                                </figure>
-                                <div class="wrapper">
-                                    <h3><a href="/centers/{{ $c->slug }}">{{ $c->name }}</a></h3>
-                                    <p>{{ $c->description }}</p>
-                                </div>
-                                <ul>
-                                    <li><i class="ti-eye"></i> {{ $c->viewCount }} بازدید</li>
-                                    <li><div class="score"><strong>{{ $c->category->title }}</strong></div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    @endforeach
+    <div class="container margin_60_35">
+        <div class="col-lg-12">
+            <div class="row no-gutters custom-search-input-2 inner">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <input wire:model.defer="search_word" class="form-control" type="text" placeholder="دنبال چه چیزی میگردید...؟">
+                        <i class="icon_search"></i>
+                    </div>
                 </div>
-                <!-- /row -->
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <input wire:model.defer="search_city_or_state" class="form-control" type="text" placeholder="فیلتر استان/شهر">
+                        <i class="icon_pin_alt"></i>
+                    </div>
+                </div>
+
+                @php $categories = \App\Models\Category::query()->where('is_remove' , 0)->get() @endphp
+
+                <div class="col-lg-3">
+                    <select wire:model.defer="search_category" class="wide">
+                        <option value="0">همه دسته بندی ها</option>
+                        @foreach($categories as $c)
+                                <option value="{{ $c->id }}">{{ $c->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-lg-2">
+                    <input wire:click="SearchAndFilter()" type="submit" class="btn_search" value="جستجو">
+                </div>
             </div>
-            <!-- /isotope-wrapper -->
+            <!-- /row -->
+        </div>
+        <!-- /custom-search-input-2 -->
+        <div class="isotope-wrapper">
 
-            {!! $centers->links() !!}
+            @foreach($centers as $c)
 
-            <p class="text-center"><a href="#0" class="btn_1 rounded add_top_30">اینجا باید پیجینیت قرار بگیرد</a></p>
+                <div class="box_list isotope-item popular">
+                    <div class="row no-gutters">
+                        <div class="col-lg-5"box_list isotope-item popular>
+                            <figure>
+                                <a href="/centers/{{ $c->slug }}"><img src="{{ $c->images['images']['original'] }}" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+                            </figure>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="wrapper">
+
+                                @if(auth()->check())
+                                    @if($c->wish_lists->where('user_id' , auth()->user()->id)->isEmpty())
+                                        <a wire:click="AddToWishList('{{ $c->slug }}')" class="wish_bt"></a>
+                                    @else
+                                        <a wire:click="DeleteFromWishList('{{ $c->slug }}')" class="wish_bt liked"></a>
+                                    @endif
+                                @endif
+
+                                <h3><a href="/centers/{{ $c->slug }}"> {{ $c->name }} </a></h3>
+                                <p>{{ $c->description }}</p>
+                            </div>
+                            <ul>
+                                <li><i class="ti-eye"></i> {{ $c->viewCount }} بازدید </li>
+                                <li><div class="score"><strong>{{ $c->state->name }}</strong></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
 
         </div>
-        <!-- /container -->
-    </main>
+        <!-- /isotope-wrapper -->
+
+        <p class="text-center"><a href="#0" class="btn_1 rounded">اینجا باید بیجینیت قرار بگیرد</a></p>
+
+    </div>
 </div>

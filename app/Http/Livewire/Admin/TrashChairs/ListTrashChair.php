@@ -45,6 +45,14 @@ class ListTrashChair extends Component
         $this->chairs = $this->search != '' ? $this->Searching() : Chair::where('is_remove', 1)->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectTrashChairs();

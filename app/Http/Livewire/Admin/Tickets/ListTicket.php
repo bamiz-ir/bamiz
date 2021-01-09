@@ -33,7 +33,6 @@ class ListTicket extends Component
             ->latest()->paginate($this->pagination);
     }
 
-
     public function close(Ticket $ticket)
     {
         $ticket->update(['status' => 1]);
@@ -43,6 +42,14 @@ class ListTicket extends Component
     {
         $this->tickets = $this->search != '' ? $this->Searching()
             : Ticket::where('status', 0)->latest()->paginate($this->pagination);
+    }
+
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
     }
 
     public function render()

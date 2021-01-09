@@ -44,7 +44,7 @@ class Centers extends Component
 
     private function getData()
     {
-        $this->centers = Center::query()->where('is_remove' , 0)
+        $this->centers = Center::where('is_remove' , 0)
             ->whereHas('work_time' , function ($query){
                 return $query->where('center_id' , '!=' , null);
             })->latest()->paginate($this->pagination);

@@ -31,6 +31,14 @@ class ListPermission extends Component
             : Permission::latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $permissions = $this->selectPermissions();

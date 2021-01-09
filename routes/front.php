@@ -17,4 +17,7 @@ Route::get('/mizbans/{slug}' , [MainController::class , 'mizbans']);
 Route::get('/centers' , [MainController::class , 'centers']);
 Route::get('/galleries' , [MainController::class , 'galleries']);
 Route::get('/about_us' , [MainController::class , 'about_us']);
-Route::get('/contact_us' , [MainController::class , 'contact_us']);
+Route::get('/contact_us' , [MainController::class , 'contact_us_show']);
+Route::post('/contact_us' , [MainController::class , 'contact_us_submit'])->name('contact_us');
+Route::get('/blogs' , [MainController::class , 'blogs']);
+Route::get('/blogs/{slug}' , [MainController::class , 'blog_detail']);

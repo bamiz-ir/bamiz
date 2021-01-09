@@ -46,136 +46,18 @@
             <div class="owl-stage-outer">
                 <div class="owl-stage"
                      style="transition: all 0s ease 0s; width: 3640px; transform: translate3d(1540px, 0px, 0px);">
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Lucas Smith<em>Marketing</em></h4>
-                                </div>
-                                <img src="img/2_carousel.jpg" alt="">
-                            </a>
+                   @foreach($centers as $c)
+                        <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#0">
+                                    <div class="title">
+                                        <h4>{{ $c->name }}</h4>
+                                    </div>
+                                    <img src="{{ $c->images['images']['original'] }}" alt="{{ $c->slug }}">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Paul Stephens<em>Business strategist</em></h4>
-                                </div>
-                                <img src="img/3_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Pablo Himenez<em>Customer Service</em></h4>
-                                </div>
-                                <img src="img/4_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Andrew Stuttgart<em>Admissions</em></h4>
-                                </div>
-                                <img src="img/5_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Julia Holmes<em>CEO</em></h4>
-                                </div>
-                                <img src="img/1_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Lucas Smith<em>Marketing</em></h4>
-                                </div>
-                                <img src="img/2_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Paul Stephens<em>Business strategist</em></h4>
-                                </div>
-                                <img src="img/3_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item active center" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Pablo Himenez<em>Customer Service</em></h4>
-                                </div>
-                                <img src="img/4_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Andrew Stuttgart<em>Admissions</em></h4>
-                                </div>
-                                <img src="img/5_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned active" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Julia Holmes<em>CEO</em></h4>
-                                </div>
-                                <img src="img/1_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Lucas Smith<em>Marketing</em></h4>
-                                </div>
-                                <img src="img/2_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Paul Stephens<em>Business strategist</em></h4>
-                                </div>
-                                <img src="img/3_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 270px; margin-left: 10px;">
-                        <div class="item">
-                            <a href="#0">
-                                <div class="title">
-                                    <h4>Pablo Himenez<em>Customer Service</em></h4>
-                                </div>
-                                <img src="img/4_carousel.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="owl-nav disabled">

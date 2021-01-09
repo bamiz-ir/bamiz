@@ -18,8 +18,16 @@ class ListSetting extends Component
 
     public function Searching()
     {
-        return Setting::where('key' , 'like' , '%' . $this->search . '%')
-            ->orWhere('value' , 'like' , '%' . $this->search . '%')->latest()->paginate($this->pagination);
+        return Setting::where('key', 'like', '%' . $this->search . '%')
+            ->orWhere('value', 'like', '%' . $this->search . '%')->latest()->paginate($this->pagination);
+    }
+
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
     }
 
     public function destroy(Setting $setting)
@@ -27,7 +35,7 @@ class ListSetting extends Component
         $setting->delete();
     }
 
-    private function selectSettings(): void
+    private function selectSettings()
     {
         $this->settings = $this->search != '' ? $this->Searching() : Setting::latest()->paginate($this->pagination);
     }
@@ -35,6 +43,6 @@ class ListSetting extends Component
     public function render()
     {
         $this->selectSettings();
-        return view('livewire.admin.settings.list-setting' , ['settings' => $this->settings]);
+        return view('livewire.admin.settings.list-setting', ['settings' => $this->settings]);
     }
 }

@@ -161,7 +161,7 @@
 
         </div>
         <!-- /carousel -->
-        <p class="btn_home_align" style="text-align: left !important;"><a href="centers" class="btn_1 rounded">نمایش
+        <p class="btn_home_align" style="text-align: left !important;"><a href="/centers" class="btn_1 rounded">نمایش
                 همه</a></p>
         <hr class="large">
     </section>
@@ -199,7 +199,7 @@
         <!-- /grid_item -->
         </div>
         <!-- /row -->
-        <p class="btn_home_align" style="text-align: left !important;"><a href="centers" class="btn_1 rounded">نمایش
+        <p class="btn_home_align" style="text-align: left !important;"><a href="/centers" class="btn_1 rounded">نمایش
                 همه</a></p>
     </section>
     <!-- /section -->
@@ -280,7 +280,7 @@
 
             </div>
             <!-- /row -->
-            <p class="btn_home_align" style="text-align: left !important;"><a href="/blog" class="btn_1 rounded">نمایش همه</a></p>
+            <p class="btn_home_align" style="text-align: left !important;"><a href="/blogs" class="btn_1 rounded">نمایش همه</a></p>
         </div>
         <!-- /container -->
     </div>

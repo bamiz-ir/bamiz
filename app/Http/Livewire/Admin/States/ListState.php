@@ -17,6 +17,14 @@ class ListState extends Component
 
     protected $states = [];
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(State $state)
     {
         $state->delete();

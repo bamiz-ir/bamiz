@@ -98,7 +98,7 @@
                                 </span>
 
                             </td>
-                            <td><img width="60" src="{{ $item->profile_photo_path ?: 'https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg'}}" alt="عکس کابر"> </td>
+                            <td><img width="60" src="{{ $item->profile_photo_path ?  \Illuminate\Support\Facades\Storage::url($item->profile_photo_path)  : 'https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg'}}" alt="عکس کابر"> </td>
 
                             <td>{{ \Hekmatinasser\Verta\Verta:: instance($item->created_at)->format('%B %d، %Y') }}</td>
                             <td>

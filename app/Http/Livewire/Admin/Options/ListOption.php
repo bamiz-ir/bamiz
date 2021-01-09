@@ -39,6 +39,14 @@ class ListOption extends Component
             Option::where('is_remove', 0)->latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectOptions();

@@ -102,7 +102,7 @@ class CenterDetail extends Component
 
     private function getData()
     {
-        $this->comments = Comment::query()->where(function ($query){
+        $this->comments = Comment::where(function ($query){
             return $query->where('status' , 1)
                 ->where('commentable_id' , $this->center->id)
                 ->where('commentable_type' , get_class($this->center));
@@ -121,7 +121,7 @@ class CenterDetail extends Component
 
     public function mount()
     {
-        $this->center = Center::query()->where('slug' , request('slug'))->firstOrFail();
+        $this->center = Center::where('slug' , request('slug'))->firstOrFail();
         $this->center->update(['viewCount' => $this->center->viewCount += 1]);
 
         if (auth()->check() && $this->center->wish_lists->where('user_id' , auth()->user()->id)->isEmpty())

@@ -125,6 +125,25 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="control-label col-lg-2">مدیر رستوران</label>
+                            <div class="col-md-10">
+
+                                <select wire:model.defer="user_id" required class="form-control rounded" name="user_id">
+
+                                    <option value="">بدون مدیر</option>
+
+                                    @foreach($users as $u)
+
+                                        <option {{ $type == 'edit' && $u->id == $center->user_id ? 'selected' : old('user_id') }} value="{{ $u->id }}"> {{ $u->username }} </option>
+
+                                    @endforeach
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="control-label col-lg-2">عکس مرکز</label>
                             <div class="col-md-10">
                                 <input {{ $type == '' ? 'required'  :  '' }} id="name" type="file" name="images"

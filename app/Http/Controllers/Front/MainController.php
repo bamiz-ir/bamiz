@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactUsRequest;
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -37,8 +39,26 @@ class MainController extends Controller
         return view('Front.about_us');
     }
 
-    public function contact_us()
+    public function contact_us_show()
     {
         return view('Front.contact_us');
+    }
+
+    public function contact_us_submit(ContactUsRequest $request)
+    {
+        ContactUs::create($request->all());
+
+        session()->flash('contact_us_message' , 'کاربر عزیز پیام تماس شما با موفقیت ثبت شد.');
+        return redirect('/contact_us');
+    }
+
+    public function blogs()
+    {
+        return view('Front.blogs');
+    }
+
+    public function blog_detail()
+    {
+        return view('Front.blog_detail');
     }
 }

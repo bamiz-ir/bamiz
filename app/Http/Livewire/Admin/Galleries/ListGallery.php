@@ -37,6 +37,14 @@ class ListGallery extends Component
         $this->galleries = $this->search != '' ? $this->Searching() : Gallery::latest()->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function render()
     {
         $this->selectGalleries();

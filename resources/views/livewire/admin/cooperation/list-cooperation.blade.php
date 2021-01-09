@@ -41,7 +41,8 @@
                             <td>{{$item->phone}}</td>
                             <td>
                                 @if($item->file)
-                                    <img src="{{ $item->file }}" alt="{{ $item->name }}" width="60">
+                                    <?php $file = explode('/' , $item->file) ?>
+                                    <a href="{{ $item->file }}" target="_blank"> {{ end($file) }} </a>
                                 @else
                                     ندراد
                                 @endif

@@ -33,6 +33,14 @@ class ListAnswer extends Component
             ->paginate($this->pagination);
     }
 
+    public function updated($propertyName)
+    {
+        if ($propertyName == 'search' || $propertyName == 'pagination')
+        {
+            $this->resetPage();
+        }
+    }
+
     public function destroy(Answer $answer)
     {
         $answer->delete();
