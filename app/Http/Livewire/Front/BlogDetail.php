@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Front;
 
+use App\Http\Controllers\traits\BlogTrait;
 use App\Http\Controllers\traits\CommentTrait;
 use App\Models\Article;
 use App\Models\Center;
@@ -12,11 +13,12 @@ use Livewire\WithPagination;
 class BlogDetail extends Component
 {
     use CommentTrait;
+    use BlogTrait;
 
     public $search = '';
 
     public $blog;
-    public $articles;
+    protected $articles;
     public $best_centers;
     public $comments;
 
@@ -59,9 +61,9 @@ class BlogDetail extends Component
 
     private function getData()
     {
-        $this->articles = Article::orderByDesc('LikeCount')->get();
-        $this->best_centers = Center::orderByDesc('ViewCount')->take(10)->get();
-        $this->comments = Comment::query()->where(function ($query){
+        $this->articles =  Article::where('status', 1);
+        $this->best_centers = self::BestCenterBlogs();
+        $this->comments = Comment::where(function ($query){
             return $query->where('status' , 1)
                 ->where('commentable_id' , $this->blog->id)
                 ->where('commentable_type' , get_class($this->blog));
@@ -77,6 +79,6 @@ class BlogDetail extends Component
     public function render()
     {
         $this->getData();
-        return view('livewire.front.blog-detail');
+        return view('livewire.front.blog-detail' , ['articles' => $this->articles]);
     }
 }

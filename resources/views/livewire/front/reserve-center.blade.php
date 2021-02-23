@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="bs-wizard-step disabled">
-                        <div class="text-center bs-wizard-stepnum">کارت رزرو</div>
+                        <div class="text-center bs-wizard-stepnum">فاکتور رزرو</div>
                         <div class="progress">
                             <div class="progress-bar"></div>
                         </div>
@@ -37,56 +37,61 @@
                 <div class="col-lg-8">
                     <div class="box_cart">
 
-                        <div class="message">
+                       @if(!auth()->check())
+                            <div class="message">
 
-                            <p> برای رزرو باید حتما در سایت بامیز ثبت نام نمائید</p>
-                        </div>
+                                <p> برای رزرو باید حتما در سایت بامیز ثبت نام نمائید</p>
+                            </div>
 
-                        <div class="form_title">
-                            <h3><strong>1</strong>مشخصات کاربری</h3>
-                        </div>
-                        <div class="step">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label>نام و نام خانوادگی</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="">
-                                    </div>
+                            <div>
+                                <div class="form_title">
+                                    <h3><strong>1</strong>مشخصات کاربری</h3>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label>شماره تلفن</label>
-                                        <input type="number" class="form-control" id="phoneNumber" placeholder=""
-                                               name="phoneNumber">
+                                <div class="step">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>نام و نام خانوادگی</label>
+                                                <input type="text" class="form-control" id="name" name="name" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>شماره تلفن</label>
+                                                <input type="number" class="form-control" id="phoneNumber" placeholder=""
+                                                       name="phoneNumber">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <br>
+                                                <button id="btn_fast_register" type="button" class="btn_1 full-width outline"><i
+                                                        class="icon-user-add"></i>ثبت نام فوری
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <br>
-                                        <button id="btn_fast_register" type="button" class="btn_1 full-width outline"><i
-                                                class="icon-user-add"></i>ثبت نام فوری
-                                        </button>
+                                    <div class="row" id="verify_div" style="display: none;">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>کد تایید ثبت نام</label>
+                                                <input type="number" class="form-control" id="verify_code" placeholder=""
+                                                       name="verify_code">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <br>
+                                                <button id="btn_fast_register_verify" type="button"
+                                                        class="btn_1 full-width purchase"><i class="icon-check"></i>تاید ثبت نام
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" id="verify_div" style="display: none;">
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label>کد تایید ثبت نام</label>
-                                        <input type="number" class="form-control" id="verify_code" placeholder=""
-                                               name="verify_code">
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <br>
-                                        <button id="btn_fast_register_verify" type="button"
-                                                class="btn_1 full-width purchase"><i class="icon-check"></i>تاید ثبت نام
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        @endif
                         <hr>
                         <!--End step -->
 

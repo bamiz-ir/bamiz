@@ -107,15 +107,10 @@
 </div>
 
 @push('JS')
-    <script src="/ckeditor/ckeditor.js"></script>
+        <script src="/ckeditor_basic/ckeditor.js"></script>
+
     <script>
         CKEDITOR.replace('body' , {
-
-
-            filebrowserUploadMethod: 'form',
-
-            filebrowserUploadUrl : '/admin/panel/CK',
-            filebrowserImageUploadUrl :  '/admin/panel/CK'
 
         });
     </script>

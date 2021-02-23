@@ -81,7 +81,7 @@ class PaymentController extends Controller
         ////////////////////////////////////////////////////////////
         /// در گاه پرداخت
 
-        $this->getSettingsData();
+        $this->HeaderAndFooterStaticData();
 
         $MerchantID = $this->merchant_id; //Required
         $Amount = $this->totalPrice; //Amount will be based on Toman - Required

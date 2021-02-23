@@ -21,3 +21,4 @@ Route::get('/contact_us' , [MainController::class , 'contact_us_show']);
 Route::post('/contact_us' , [MainController::class , 'contact_us_submit'])->name('contact_us');
 Route::get('/blogs' , [MainController::class , 'blogs']);
 Route::get('/blogs/{slug}' , [MainController::class , 'blog_detail']);
+Route::get('/centers/blogs/{slug}' , [MainController::class , 'blogs_center']);

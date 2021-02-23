@@ -407,7 +407,7 @@
 
                         @endif
 
-                        <form action="{{ route('reserve' , $center->slug) }}" method="post" id="reserve_form">
+                        <form action="{{ route('reserve' , $center->slug) }}" method="post">
 
                             @csrf
 

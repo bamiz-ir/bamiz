@@ -21,14 +21,14 @@ class ReserveCenter extends Component
 
     public function SetNewOption($slug)
     {
-        $option = Option::query()->where('slug' , $slug)->firstOrFail();
+        $option = Option::where('slug' , $slug)->firstOrFail();
         array_push($this->options , $option->id);
         $this->options_price += $option->price;
     }
 
     public function RemoveOption($slug)
     {
-        $option = Option::query()->where('slug' , $slug)->firstOrFail();
+        $option = Option::where('slug' , $slug)->firstOrFail();
         if (array_search($option->id , $this->options) !== false)
         {
             $key = array_search($option->id , $this->options);

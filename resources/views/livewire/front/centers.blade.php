@@ -15,16 +15,15 @@
 
     <div class="container margin_60_35">
         <div class="col-lg-12">
-            <div class="row no-gutters custom-search-input-2 inner">
+            <div class="row no-gutters inner">
                 <div class="col-lg-4">
                     <div class="form-group">
                         <input wire:model.defer="search_word" class="form-control" type="text" placeholder="دنبال چه چیزی میگردید...؟">
-                        <i class="icon_search"></i>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="form-group">
-                        <input wire:model.defer="search_city_or_state" class="form-control" type="text" placeholder="فیلتر استان/شهر">
+                        <input wire:model.defer="search_city_or_state" class="form-control" type="text" placeholder="فیلتر استان/شهر؟">
                         <i class="icon_pin_alt"></i>
                     </div>
                 </div>
@@ -32,15 +31,16 @@
                 @php $categories = \App\Models\Category::query()->where('is_remove' , 0)->get() @endphp
 
                 <div class="col-lg-3">
-                    <select wire:model.defer="search_category" class="wide">
+                    <select wire:model.defer="search_category" class="form-control" style="alignment: right">
                         <option value="0">همه دسته بندی ها</option>
                         @foreach($categories as $c)
-                                <option value="{{ $c->id }}">{{ $c->title }}</option>
+                            <option value="{{ $c->id }}">{{ $c->title }}</option>
                         @endforeach
                     </select>
                 </div>
+
                 <div class="col-lg-2">
-                    <input wire:click="SearchAndFilter()" type="submit" class="btn_search" value="جستجو">
+                    <input wire:click="SearchAndFilter()" type="submit" class="btn btn-success" value="جستجو">
                 </div>
             </div>
             <!-- /row -->
@@ -54,7 +54,7 @@
                     <div class="row no-gutters">
                         <div class="col-lg-5"box_list isotope-item popular>
                             <figure>
-                                <a href="/centers/{{ $c->slug }}"><img src="{{ $c->images['images']['original'] }}" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+                                <a href="/centers/{{ $c->slug }}"><img src="{{ $c->images['images']['original'] }}" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>مشاهده</span></div></a>
                             </figure>
                         </div>
                         <div class="col-lg-7">
@@ -83,6 +83,8 @@
 
         </div>
         <!-- /isotope-wrapper -->
+
+        {!! $centers->links() !!}
 
         <p class="text-center"><a href="#0" class="btn_1 rounded">اینجا باید بیجینیت قرار بگیرد</a></p>
 

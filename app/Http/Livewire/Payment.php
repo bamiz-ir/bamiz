@@ -69,7 +69,7 @@ class Payment extends Component
     private function selectData(): array
     {
         $centers = Center::getCenters();
-        $users = User::query()->where('block_status', 0)->get();
+        $users = User::where('block_status', 0)->get();
         return array($centers ,$users);
     }
 

@@ -61,4 +61,9 @@ class MainController extends Controller
     {
         return view('Front.blog_detail');
     }
+
+    public function blogs_center()
+    {
+        return view('Front.blogs_center');
+    }
 }

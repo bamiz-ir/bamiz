@@ -15,9 +15,46 @@ class Centers extends Component
     public $pagination = 9;
     protected $paginationTheme = 'bootstrap';
 
+    public $search_category;
+    public $search_word;
+    public $search_city_or_state;
+
+    public function SearchAndFilter()
+    {
+       $this->centers = Center::where('is_remove' , 0);
+
+       if ($this->search_word)
+       {
+           $this->centers = $this->centers->where(function ($query){
+               return $query->where('name' , 'like' , '%' . $this->search_word . '%');
+           });
+       }
+
+        if ($this->search_city_or_state)
+        {
+            $this->centers->where(function ($query){
+                $query->whereHas('city' , function ($query){
+                    return $query->where('name' , 'like' , '%' . $this->search_city_or_state . '%');
+                }) ->OrWhereHas('state' , function ($query){
+                    return $query->where('name' , 'like' , '%' . $this->search_city_or_state . '%');
+                });
+            });
+        }
+
+        if ($this->search_category != 0)
+        {
+           $this->centers = $this->centers->where(function ($query){
+                return $query->where('category_id' , $this->search_category);
+            });
+        }
+
+        $this->centers = $this->centers->latest()->paginate($this->pagination);
+        dd($this->centers);
+    }
+
     private function getCenterBySlug($slug)
     {
-        return Center::query()->where('slug' , $slug)->first();
+        return Center::where('slug' , $slug)->first();
     }
 
     public function AddToWishList($slug)

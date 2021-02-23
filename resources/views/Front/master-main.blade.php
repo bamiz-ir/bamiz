@@ -109,7 +109,7 @@
                 <li><a href="{{ route('logout') }}"  class="login" title="خروج">خروج</a></li>
             @else
                 <li><span> <a href="/login">ورود</a> </span></li>
-                /
+
                 <li><span> <a href="/register">عضویت</a> </span></li>
             @endif
 

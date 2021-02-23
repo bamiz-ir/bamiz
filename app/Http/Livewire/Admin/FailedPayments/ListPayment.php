@@ -31,7 +31,7 @@ class ListPayment extends Component
                 })
                 ->OrWhere('price' , 'like' , '%' .$this->search . '%')
                 ->OrWhere('refID' , 'like' , '%' . $this->search . '%')
-                ->where('refID' , '!=' , null);
+                ->where('refID' , '=' , null);
         })->where('status' , 0)
             ->latest()->paginate($this->pagination);
     }
@@ -44,7 +44,7 @@ class ListPayment extends Component
     private function selectFailedPayments(): void
     {
         $this->payments = $this->search != '' ? $this->Searching()
-            : Payment::where('status', 0)->where('refID', '!=', null)
+            : Payment::where('status', 0)->where('refID', '=', null)
                 ->latest()->paginate($this->pagination);
     }
 
