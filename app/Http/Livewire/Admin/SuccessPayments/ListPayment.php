@@ -16,6 +16,7 @@ class ListPayment extends Component
 
     protected $payments = [];
 
+
     private function Searching()
     {
         return Payment::where(function ($query){
